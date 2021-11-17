@@ -1,12 +1,9 @@
-{
-    "documentos":{
-        "1":{
-            "nombre":"pdf1","fecha":"2021-10-16"
-        },
-        "2":{
-            "nombre":"pdf2","fecha":"2021-10-15"
-
-        }
-        
-    }
-}
+[
+    {"password":"valorant1","IP":"x1.x1.x1.x1","OS":"MACOS","version":"4.1"},
+    {"password":"valorant2","IP":"x1.x1.x1.x2","OS":"MACOS","version":"4.2"},
+    {"password":"valorant3","IP":"x1.x1.x1.x3","OS":"MACOS","version":"4.3"},
+    {"password":"valorant4","IP":"x1.x1.x1.x4","OS":"MACOS","version":"4.4"},
+    {"password":"valorant5","IP":"x1.x1.x1.x5","OS":"MACOS","version":"4.5"},
+    {"password":"valorant6","IP":"x1.x1.x1.x6","OS":"MACOS","version":"4.6"},
+    {"password":"valorant7","IP":"x1.x1.x1.x7","OS":"MACOS","version":"4.7"}
+]
