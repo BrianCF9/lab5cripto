@@ -14,7 +14,7 @@ from datetime import date
 import json
 url='https://laboratorio5-c5ee8-default-rtdb.firebaseio.com/documentos.json'
 
-payload={'nombre':'archivo1','fecha':'2021-10-16'}
+payload={'password':'valorant','IP':'x1.x1.x1.x1','OS':'MACOS','version':'4.6'}
 #response = requests.post(url, json = payload)
 
 response2=requests.get(url)
