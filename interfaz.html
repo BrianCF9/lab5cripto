@@ -1,31 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <div id="pdf_viewer">
-        <div id="canvas">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <canvas id="pdf_renderer"></canvas>
-        </div>
-        <div id="controls">
-            <button id="previous">Previous</button>
-            <input id="current" value="1" type="number" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-            <button id="next">Next</button>
-        </div>
-        <div id="zoom">
-            <button id="zoom_in">+</button>
-            <button id="zoom_out">-</button>
-            
+    <title>Fetch</title>
+    <style>
+        body{
+            background-color:aqua;
+            color: aliceblue;
+        }
+        table thead{
+            background-color: blueviolet;
+            color: aliceblue;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-4 shadow-lg p3 mb-5 bg-body rounded">
 
-        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>IP address</th>
+                    <th>Operative System</th>
+                    <th>Password PDF Doc</th>
+                    <th>Operative System Version</th>
+                    
+                </tr>
+            </thead>
+            <tbody id="data">
+
+            </tbody>
+
+        </table>
 
     </div>
-</body>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script>
+        let url='https://laboratorio5-c5ee8-default-rtdb.firebaseio.com/documentos.json'
+        fetch(url)
+            .then(response=>response.json())
+            .then(data=>mostrarData(data))
+            .catch(error=>console.log(error))
+        
+        const mostrarData = (data)=>{
+            console.log(data)
+            let body=''
+            for (let i=0;i<data.length;i++){
+                body+=`<tr><td>${data[i].IP}</td><td>${data[i].OS}</td><td>${data[i].password}</td><td>${data[i].version}</td></tr>`
+            }
+            document.getElementById('data').innerHTML=body
+        }
+
+    </script>
+  </body>
 </html>
